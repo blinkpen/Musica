@@ -1,0 +1,25 @@
+F:\Projects\Musica Pro\Musica Pro\bin\Debug\netcoreapp3.1\Musica Pro.exe
+F:\Projects\Musica Pro\Musica Pro\bin\Debug\netcoreapp3.1\Musica Pro.deps.json
+F:\Projects\Musica Pro\Musica Pro\bin\Debug\netcoreapp3.1\Musica Pro.runtimeconfig.json
+F:\Projects\Musica Pro\Musica Pro\bin\Debug\netcoreapp3.1\Musica Pro.runtimeconfig.dev.json
+F:\Projects\Musica Pro\Musica Pro\bin\Debug\netcoreapp3.1\Musica Pro.dll
+F:\Projects\Musica Pro\Musica Pro\bin\Debug\netcoreapp3.1\Musica Pro.pdb
+F:\Projects\Musica Pro\Musica Pro\bin\Debug\netcoreapp3.1\NAudio.dll
+F:\Projects\Musica Pro\Musica Pro\bin\Debug\netcoreapp3.1\NAudio.Asio.dll
+F:\Projects\Musica Pro\Musica Pro\bin\Debug\netcoreapp3.1\NAudio.Core.dll
+F:\Projects\Musica Pro\Musica Pro\bin\Debug\netcoreapp3.1\NAudio.Midi.dll
+F:\Projects\Musica Pro\Musica Pro\bin\Debug\netcoreapp3.1\NAudio.Wasapi.dll
+F:\Projects\Musica Pro\Musica Pro\bin\Debug\netcoreapp3.1\NAudio.WinForms.dll
+F:\Projects\Musica Pro\Musica Pro\bin\Debug\netcoreapp3.1\NAudio.WinMM.dll
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica_Pro.Form1.resources
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica_Pro.MusicaBlock.resources
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica_Pro.Properties.Resources.resources
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.csproj.GenerateResource.cache
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.AssemblyInfoInputs.cache
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.AssemblyInfo.cs
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.csproj.CoreCompileInputs.cache
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.csproj.CopyComplete
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.dll
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.pdb
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.genruntimeconfig.cache
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.csprojAssemblyReference.cache
