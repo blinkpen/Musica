@@ -42,12 +42,12 @@ namespace Musica_Pro
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -63,7 +63,9 @@ namespace Musica_Pro
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripSeparator6,
-            this.toolStripButton4,
+            this.toolStripButton2,
+            this.toolStripSeparator4,
+            this.toolStripComboBox1,
             this.toolStripSeparator7,
             this.toolStripLabel1,
             this.toolStripTextBox1,
@@ -71,9 +73,7 @@ namespace Musica_Pro
             this.toolStripLabel2,
             this.toolStripTextBox2,
             this.toolStripSeparator5,
-            this.toolStripButton2,
-            this.toolStripSeparator4,
-            this.toolStripComboBox1,
+            this.toolStripButton4,
             this.toolStripSeparator3,
             this.toolStripButton3,
             this.toolStripSeparator2});
@@ -146,11 +146,6 @@ namespace Musica_Pro
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
             // toolStripButton2
             // 
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
@@ -193,6 +188,11 @@ namespace Musica_Pro
             this.toolStripButton3.Size = new System.Drawing.Size(48, 22);
             this.toolStripButton3.Text = "Play";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // openFileDialog1
             // 
