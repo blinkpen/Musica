@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace Musica_Pro
 {
+
     public partial class Form1 : Form
     {
         int notes = 0; 
@@ -15,13 +16,14 @@ namespace Musica_Pro
         int t1 = 0;
         int ti = 0;
         int ni = 0;
+        private static DrawItemEventHandler toolStripComboBox1_DrawItem;
 
         public Form1()
         {
             InitializeComponent();
             toolStripComboBox1.SelectedIndex = 0;
             ti = timer1.Interval;
-            ni = Convert.ToInt32(toolStripTextBox1.Text);
+            ni = Convert.ToInt32(toolStripTextBox1.Text);            
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
