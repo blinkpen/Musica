@@ -71,9 +71,7 @@ namespace Musica_Pro
             }
   
            timer1.Start();
-        }    
-
-
+        }  
 
         private void button1_Click_1(object sender, EventArgs e)
         {

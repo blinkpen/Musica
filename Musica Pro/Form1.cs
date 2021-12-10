@@ -15,6 +15,7 @@ namespace Musica_Pro
         int t1 = 0;
         int ti = 0;
         int ni = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -85,8 +86,8 @@ namespace Musica_Pro
                 mb.source = openFileDialog1.FileName;
                 generateMelody();
             }
-
         }
+
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
             reCenterForms();
@@ -148,8 +149,7 @@ namespace Musica_Pro
                         mB.note = rnd.Next(50, 53);//select from Scale 8
                     }
                     mB.cb.SelectedIndex = mB.note;
-                }               
-
+                }            
             }
         }
 
@@ -207,9 +207,7 @@ namespace Musica_Pro
                     removeNotes(Convert.ToInt32(toolStripTextBox1.Text));      
                 }
                 ni = Convert.ToInt32(toolStripTextBox1.Text);
-
-            }
-            
+            }            
         }
     }
 }
