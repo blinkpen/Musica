@@ -13,11 +13,14 @@ namespace Musica_Pro
         int newLineInc = 0;
         int rowCount = 10;
         int t1 = 0;
-
+        int ti = 0;
+        int ni = 0;
         public Form1()
         {
             InitializeComponent();
             toolStripComboBox1.SelectedIndex = 0;
+            ti = timer1.Interval;
+            ni = Convert.ToInt32(toolStripTextBox1.Text);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -33,7 +36,6 @@ namespace Musica_Pro
 
         private void loadNotes()
         {
-            timer1.Interval = Convert.ToInt32(toolStripTextBox2.Text);
             for (int i = notes; i > 0; i--)
             {
                 panel1.Controls.Remove(panel1.Controls["Musica Block " + (i)]);
@@ -178,7 +180,18 @@ namespace Musica_Pro
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            loadNotes();
+            if (Convert.ToInt32(toolStripTextBox2.Text) != ti)
+            {
+                timer1.Interval = Convert.ToInt32(toolStripTextBox2.Text);
+                ti = timer1.Interval;
+            }
+
+            if (Convert.ToInt32(toolStripTextBox1.Text) != ni)
+            {
+                loadNotes();
+                ni = Convert.ToInt32(toolStripTextBox1.Text);
+            }
+            
         }
     }
 }
