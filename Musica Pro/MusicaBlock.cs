@@ -125,6 +125,9 @@ namespace Musica_Pro
             {
                 mB.BackColor = Color.DeepPink;
             }
+            Color lightRed = ControlPaint.Light(mB.BackColor);
+            mB.button1.BackColor = lightRed;
+            mB.cb.BackColor = lightRed;
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)

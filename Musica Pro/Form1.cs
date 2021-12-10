@@ -33,6 +33,7 @@ namespace Musica_Pro
 
         private void loadNotes()
         {
+            timer1.Interval = Convert.ToInt32(toolStripTextBox2.Text);
             for (int i = notes; i > 0; i--)
             {
                 panel1.Controls.Remove(panel1.Controls["Musica Block " + (i)]);
@@ -92,8 +93,7 @@ namespace Musica_Pro
         }
 
         private void generateMelody()
-        {
-            timer1.Interval = Convert.ToInt32(toolStripTextBox2.Text);
+        {            
             Random rnd = new Random();
             foreach (MusicaBlock mB in panel1.Controls)
             {
