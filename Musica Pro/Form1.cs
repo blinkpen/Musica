@@ -92,6 +92,7 @@ namespace Musica_Pro
 
         private void generateMelody()
         {
+            timer1.Interval = Convert.ToInt32(toolStripTextBox2.Text);
             Random rnd = new Random();
             foreach (MusicaBlock mB in panel1.Controls)
             {
