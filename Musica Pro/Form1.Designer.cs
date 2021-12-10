@@ -46,6 +46,7 @@ namespace Musica_Pro
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +61,7 @@ namespace Musica_Pro
             this.toolStripButton1,
             this.toolStripSeparator2,
             this.toolStripButton2,
+            this.toolStripSeparator4,
             this.toolStripComboBox1,
             this.toolStripSeparator3,
             this.toolStripButton3});
@@ -175,6 +177,11 @@ namespace Musica_Pro
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(138, 17);
             this.toolStripStatusLabel1.Text = "Current Sound: Nothing";
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -215,6 +222,7 @@ namespace Musica_Pro
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
 
