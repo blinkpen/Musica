@@ -28,17 +28,18 @@ namespace Musica_Pro
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             toolStripStatusLabel1.Text = $"Current Sound: {openFileDialog1.FileName}";
+            loadNotes();            
+        }
+
+        private void loadNotes()
+        {
             for (int i = notes; i > 0; i--)
             {
                 panel1.Controls.Remove(panel1.Controls["Musica Block " + (i)]);
                 notes -= 1;
                 newLineInc = 0;
             }
-            loadNotes();            
-        }
 
-        private void loadNotes()
-        {            
             for (int i = 0; i < Convert.ToInt32(toolStripTextBox1.Text); i++)
             {
                 if (notes == 0)
@@ -173,6 +174,11 @@ namespace Musica_Pro
                 timer1.Stop();
                 t1 = 0;
             }
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            loadNotes();
         }
     }
 }
