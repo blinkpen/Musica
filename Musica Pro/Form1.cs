@@ -31,19 +31,22 @@ namespace Musica_Pro
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             toolStripStatusLabel1.Text = $"Current Sound: {openFileDialog1.FileName}";
-            loadNotes();            
+            loadNotes(Convert.ToInt32(toolStripTextBox1.Text));            
         }
 
-        private void loadNotes()
+        private void removeNotes(int whenStop)
         {
-            for (int i = notes; i > 0; i--)
+            for (int i = notes; i > whenStop; i--)
             {
                 panel1.Controls.Remove(panel1.Controls["Musica Block " + (i)]);
                 notes -= 1;
-                newLineInc = 0;
+                newLineInc -= 1;
             }
+        }
 
-            for (int i = 0; i < Convert.ToInt32(toolStripTextBox1.Text); i++)
+        private void loadNotes(int wS)
+        { 
+            for (int i = 0; i < wS; i++)
             {
                 if (notes == 0)
                 {
@@ -180,16 +183,31 @@ namespace Musica_Pro
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(toolStripTextBox2.Text) != ti)
+            if (Convert.ToInt32(toolStripTextBox2.Text) != ti)//tempo
             {
                 timer1.Interval = Convert.ToInt32(toolStripTextBox2.Text);
                 ti = timer1.Interval;
             }
 
-            if (Convert.ToInt32(toolStripTextBox1.Text) != ni)
+            if (Convert.ToInt32(toolStripTextBox1.Text) != ni)//notes
             {
-                loadNotes();
+                int mbCount = 0;
+                foreach (Control mb in panel1.Controls.OfType<MusicaBlock>())
+                {
+                    mbCount += 1;
+                }
+
+                if (Convert.ToInt32(toolStripTextBox1.Text) > mbCount)
+                {
+                    loadNotes(Convert.ToInt32(toolStripTextBox1.Text) - mbCount);                   
+                }
+                else
+                if (Convert.ToInt32(toolStripTextBox1.Text) < mbCount)
+                {
+                    removeNotes(Convert.ToInt32(toolStripTextBox1.Text));      
+                }
                 ni = Convert.ToInt32(toolStripTextBox1.Text);
+
             }
             
         }
