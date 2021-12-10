@@ -1,2 +1,3 @@
 # Musica
- Random Melody Generator
+ Random Melody Generator.
+This is it!
