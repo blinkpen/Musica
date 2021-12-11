@@ -17,12 +17,14 @@ namespace Musica_Pro
         private int t1 = 0;
         private bool isRest = false;
         public Label lbl;
+        public CheckBox chbx;
         
         public MusicaBlock()
         {
             InitializeComponent();
             cb = comboBox1;
             lbl = label1;
+            chbx = checkBox1;
         }
 
         private void MusicaBlock_Load(object sender, EventArgs e)

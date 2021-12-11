@@ -34,13 +34,14 @@ namespace Musica_Pro
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Image = global::Musica_Pro.Properties.Resources.Note24;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(11, 39);
+            this.button1.Location = new System.Drawing.Point(5, 30);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 100);
             this.button1.TabIndex = 0;
@@ -107,7 +108,7 @@ namespace Musica_Pro
             "A8",
             "B8",
             "C8"});
-            this.comboBox1.Location = new System.Drawing.Point(11, 145);
+            this.comboBox1.Location = new System.Drawing.Point(5, 133);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 22);
             this.comboBox1.TabIndex = 1;
@@ -115,7 +116,7 @@ namespace Musica_Pro
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(11, 13);
+            this.label1.Location = new System.Drawing.Point(5, 2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 2;
@@ -127,19 +128,31 @@ namespace Musica_Pro
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(5, 161);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(81, 18);
+            this.checkBox1.TabIndex = 3;
+            this.checkBox1.Text = "Protected";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // MusicaBlock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
             this.Name = "MusicaBlock";
-            this.Size = new System.Drawing.Size(123, 180);
+            this.Size = new System.Drawing.Size(111, 185);
             this.Load += new System.EventHandler(this.MusicaBlock_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -149,5 +162,6 @@ namespace Musica_Pro
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

@@ -140,57 +140,61 @@ namespace Musica_Pro
         }
 
         private void generateMelody()
-        {            
+        {                        
             Random rnd = new Random();
             foreach (MusicaBlock mB in panel1.Controls)
             {
-                var test = rnd.Next(0, 53);
+                if(!(mB.chbx.Checked)) //if block is not protected then generate note, otherwise do not
+                {
+                    var test = rnd.Next(0, 53);
 
-                if(test == 0)//if rest
-                {
-                    mB.note = test;//set note to rest
-                    mB.cb.SelectedIndex = mB.note;                   
+                    if(test == 0)//if rest
+                    {
+                        mB.note = test;//set note to rest
+                        mB.cb.SelectedIndex = mB.note;                   
+                    }
+                    else//if not rest
+                    {
+                        if(toolStripComboBox1.SelectedIndex == 0)
+                        {
+                            mB.note = rnd.Next(0, 53);//select from all notes
+                        }
+                        else if(toolStripComboBox1.SelectedIndex == 1)
+                        {
+                            mB.note = rnd.Next(1, 8);//select from Scale 1
+                        }
+                        else if (toolStripComboBox1.SelectedIndex == 2)
+                        {
+                            mB.note = rnd.Next(8, 15);//select from Scale 2
+                        }
+                        else if (toolStripComboBox1.SelectedIndex == 3)
+                        {
+                            mB.note = rnd.Next(15, 22);//select from Scale 3
+                        }
+                        else if (toolStripComboBox1.SelectedIndex == 4)
+                        {
+                            mB.note = rnd.Next(22, 29);//select from Scale 4
+                        }
+                        else if (toolStripComboBox1.SelectedIndex == 5)
+                        {
+                            mB.note = rnd.Next(29, 36);//select from Scale 5
+                        }
+                        else if (toolStripComboBox1.SelectedIndex == 6)
+                        {
+                            mB.note = rnd.Next(36, 43);//select from Scale 6
+                        }
+                        else if (toolStripComboBox1.SelectedIndex == 7)
+                        {
+                            mB.note = rnd.Next(43, 50);//select from Scale 7
+                        }
+                        else if (toolStripComboBox1.SelectedIndex == 8)
+                        {
+                            mB.note = rnd.Next(50, 53);//select from Scale 8
+                        }
+                        mB.cb.SelectedIndex = mB.note;
+                    }            
                 }
-                else//if not rest
-                {
-                    if(toolStripComboBox1.SelectedIndex == 0)
-                    {
-                        mB.note = rnd.Next(0, 53);//select from all notes
-                    }
-                    else if(toolStripComboBox1.SelectedIndex == 1)
-                    {
-                        mB.note = rnd.Next(1, 8);//select from Scale 1
-                    }
-                    else if (toolStripComboBox1.SelectedIndex == 2)
-                    {
-                        mB.note = rnd.Next(8, 15);//select from Scale 2
-                    }
-                    else if (toolStripComboBox1.SelectedIndex == 3)
-                    {
-                        mB.note = rnd.Next(15, 22);//select from Scale 3
-                    }
-                    else if (toolStripComboBox1.SelectedIndex == 4)
-                    {
-                        mB.note = rnd.Next(22, 29);//select from Scale 4
-                    }
-                    else if (toolStripComboBox1.SelectedIndex == 5)
-                    {
-                        mB.note = rnd.Next(29, 36);//select from Scale 5
-                    }
-                    else if (toolStripComboBox1.SelectedIndex == 6)
-                    {
-                        mB.note = rnd.Next(36, 43);//select from Scale 6
-                    }
-                    else if (toolStripComboBox1.SelectedIndex == 7)
-                    {
-                        mB.note = rnd.Next(43, 50);//select from Scale 7
-                    }
-                    else if (toolStripComboBox1.SelectedIndex == 8)
-                    {
-                        mB.note = rnd.Next(50, 53);//select from Scale 8
-                    }
-                    mB.cb.SelectedIndex = mB.note;
-                }            
+                
             }
         }
 
