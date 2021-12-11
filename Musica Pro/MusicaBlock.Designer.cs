@@ -56,16 +56,6 @@ namespace Musica_Pro
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Rest",
-            "C",
-            "C#",
-            "D",
-            "D#",
-            "E",
-            "E#",
-            "F",
-            "F#",
-            "G",
-            "G#",
             "A",
             "A#",
             "B",
@@ -107,7 +97,17 @@ namespace Musica_Pro
             "F",
             "F#",
             "G",
-            "G#"});
+            "G#",
+            "A",
+            "A#",
+            "B",
+            "B#",
+            "C",
+            "C#",
+            "D",
+            "D#",
+            "E",
+            "E#"});
             this.comboBox1.Location = new System.Drawing.Point(5, 133);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 22);
