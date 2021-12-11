@@ -21,8 +21,7 @@ namespace Musica_Pro
         {
             InitializeComponent();
             toolStripComboBox1.SelectedIndex = 0;
-            ti = timer1.Interval;
-            ni = Convert.ToInt32(toolStripTextBox1.Text);            
+            ti = timer1.Interval;                       
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -56,13 +55,14 @@ namespace Musica_Pro
             {
                 if (notesEntry > notes) //if amount of notes requested is more than already exists
                 {
-                    loadNotes(notesEntry - notes); //load notes                  
+                    loadNotes(notesEntry - notes); //load notes
+                    ni = notesEntry; //update note inquiry with requested amount of notes                            
                 }
                 else if (notesEntry < notes) //if amount of notes requested is less than what already exists
                 {
-                    removeNotes(notesEntry); //remove notes     
+                    removeNotes(notesEntry); //remove notes
+                    ni = notesEntry; //update note inquiry with requested amount of notes
                 }
-                ni = Convert.ToInt32(notesEntry); //update note inquiry with requested amount of notes
             }
 
             foreach (MusicaBlock mb in panel1.Controls.OfType<MusicaBlock>())
@@ -79,10 +79,10 @@ namespace Musica_Pro
                 notes -= 1;
                 newLineInc -= 1;
 
-                if(notes != 0)
+                if (notes != 0)
                 {
                     if (newLineInc == 0)
-                    {                
+                    {
                         newLineInc = 10;
                     }
                 }     
@@ -93,9 +93,9 @@ namespace Musica_Pro
             }
         }
 
-        private void loadNotes(int wS)
+        private void loadNotes(int whenStop)
         { 
-            for (int i = 0; i < wS; i++)
+            for (int i = 0; i < whenStop; i++)
             {
                 if (notes == 0)
                 {
