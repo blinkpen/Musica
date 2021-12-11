@@ -15,7 +15,7 @@ namespace Musica_Pro
         int rowCount = 10;
         int t1 = 0;
         int ti = 0;
-        int ni = 10;       
+        int ni = 0;       
 
         public Form1()
         {
@@ -63,6 +63,11 @@ namespace Musica_Pro
                     removeNotes(notesEntry); //remove notes     
                 }
                 ni = Convert.ToInt32(notesEntry); //update note inquiry with requested amount of notes
+            }
+
+            foreach (MusicaBlock mb in panel1.Controls.OfType<MusicaBlock>())
+            {
+                mb.source = openFileDialog1.FileName;                
             }
         }
 
@@ -120,14 +125,7 @@ namespace Musica_Pro
                     }
                     notes += 1;
                     newLineInc += 1;
-                }
-                
-            }
-
-            foreach (MusicaBlock mb in panel1.Controls.OfType<MusicaBlock>())
-            {
-                mb.source = openFileDialog1.FileName;
-                generateMelody();
+                }                
             }
         }
 
