@@ -90,6 +90,7 @@ namespace Musica_Pro
             // 
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(111, 22);
             this.toolStripButton1.Text = "Import Sound..";
@@ -108,6 +109,7 @@ namespace Musica_Pro
             // 
             // toolStripTextBox1
             // 
+            this.toolStripTextBox1.Margin = new System.Windows.Forms.Padding(1, 0, 5, 0);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 25);
             this.toolStripTextBox1.Text = "5";
@@ -125,6 +127,7 @@ namespace Musica_Pro
             // 
             // toolStripTextBox2
             // 
+            this.toolStripTextBox2.Margin = new System.Windows.Forms.Padding(1, 0, 5, 0);
             this.toolStripTextBox2.Name = "toolStripTextBox2";
             this.toolStripTextBox2.Size = new System.Drawing.Size(50, 25);
             this.toolStripTextBox2.Text = "500";
@@ -169,6 +172,7 @@ namespace Musica_Pro
             "Scale 6 Only",
             "Scale 7 Only",
             "Scale 8 Only"});
+            this.toolStripComboBox1.Margin = new System.Windows.Forms.Padding(1, 0, 5, 0);
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 25);
             // 
