@@ -52,13 +52,21 @@ namespace Musica_Pro
 
                     using (device = new WaveOutEvent())
                     {
-                        for (int i = 0; i < comboBox1.SelectedIndex - 1; i++)
+                        for (int i = comboBox1.SelectedIndex - 1; i > 0; i--)
                         {
-                            pitch.PitchFactor = (float)upOneTone;
+                            pitch.PitchFactor = (float)downOneTone;
                             changer += 1;
                             semitone = Math.Pow(changer, 1.0 / 12);
                             upOneTone = semitone * semitone;
+                            downOneTone = 1.0 / upOneTone;
                         }
+                        //for (int i = 0; i < comboBox1.SelectedIndex - 1; i++)
+                        //{
+                        //    pitch.PitchFactor = (float)upOneTone;
+                        //    changer += 1;
+                        //    semitone = Math.Pow(changer, 1.0 / 12);
+                        //    upOneTone = semitone * semitone;
+                        //}
                     }
                 }
 
