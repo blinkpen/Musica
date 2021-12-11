@@ -194,8 +194,7 @@ namespace Musica_Pro
                         }
                         mB.cb.SelectedIndex = mB.note;
                     }            
-                }
-                
+                }                
             }
         }
 
@@ -215,8 +214,7 @@ namespace Musica_Pro
             {
                 timer1.Start();
                 toolStripButton3.Text = "Stop";
-            }
-            
+            }            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
