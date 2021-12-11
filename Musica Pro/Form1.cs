@@ -10,12 +10,13 @@ namespace Musica_Pro
 
     public partial class Form1 : Form
     {
-        int notes = 0; 
-        int newLineInc = 0;
-        int rowCount = 10;
-        int t1 = 0;
-        int ti = 0;
-        int ni = 0;       
+        private int notes = 0;
+        private int newLineInc = 0;
+        private int rowCount = 10;
+        private int t1 = 0;
+        private int ti = 0;
+        private int ni = 0;
+        private bool loop = false;
 
         public Form1()
         {
@@ -205,7 +206,17 @@ namespace Musica_Pro
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            if(timer1.Enabled)
+            {
+                timer1.Stop();
+                toolStripButton3.Text = "Play";
+            }
+            else
+            {
+                timer1.Start();
+                toolStripButton3.Text = "Stop";
+            }
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -221,12 +232,26 @@ namespace Musica_Pro
             
             if (t1 >= panel1.Controls.Count)
             {
-                timer1.Stop();
+                if(!loop)
+                {
+                    timer1.Stop();
+                    toolStripButton3.Text = "Play";                    
+                }
                 t1 = 0;
             }
         }
 
-
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            if(toolStripButton5.Checked)
+            {
+                loop = true;
+            }
+            else
+            {
+                loop = false;
+            }
+        }
     }
 }
 
