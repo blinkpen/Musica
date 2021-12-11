@@ -15,8 +15,7 @@ namespace Musica_Pro
         int rowCount = 10;
         int t1 = 0;
         int ti = 0;
-        int ni = 0;
-        private static DrawItemEventHandler toolStripComboBox1_DrawItem;
+        int ni = 10;       
 
         public Form1()
         {
@@ -34,7 +33,37 @@ namespace Musica_Pro
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             toolStripStatusLabel1.Text = $"Current Sound: {openFileDialog1.FileName}";
-            loadNotes(Convert.ToInt32(toolStripTextBox1.Text));            
+            addRemoveHandler();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            addRemoveHandler();
+        }
+
+        private void addRemoveHandler()
+        {
+            int tempoEntry = Convert.ToInt32(toolStripTextBox2.Text);
+            int notesEntry = Convert.ToInt32(toolStripTextBox1.Text);
+
+            if (tempoEntry != ti)//tempo
+            {
+                timer1.Interval = tempoEntry;
+                ti = timer1.Interval;
+            }
+
+            if (notesEntry != ni)//notes
+            {
+                if (notesEntry > notes) //if amount of notes requested is more than already exists
+                {
+                    loadNotes(notesEntry - notes); //load notes                  
+                }
+                else if (notesEntry < notes) //if amount of notes requested is less than what already exists
+                {
+                    removeNotes(notesEntry); //remove notes     
+                }
+                ni = Convert.ToInt32(notesEntry); //update note inquiry with requested amount of notes
+            }
         }
 
         private void removeNotes(int whenStop)
@@ -44,6 +73,18 @@ namespace Musica_Pro
                 panel1.Controls.Remove(panel1.Controls["Musica Block " + (i)]);
                 notes -= 1;
                 newLineInc -= 1;
+
+                if(notes != 0)
+                {
+                    if (newLineInc == 0)
+                    {                
+                        newLineInc = 10;
+                    }
+                }     
+                else
+                {
+                    newLineInc = 0;
+                }
             }
         }
 
@@ -57,8 +98,7 @@ namespace Musica_Pro
                     mB.Location = new Point(30, 30);                    
                     mB.Name = "Musica Block " + (notes + 1);
                     mB.lbl.Text = mB.Name;
-                    panel1.Controls.Add(mB);
-                    
+                    panel1.Controls.Add(mB);                    
                     notes += 1;
                     newLineInc += 1;
                 }
@@ -81,6 +121,7 @@ namespace Musica_Pro
                     notes += 1;
                     newLineInc += 1;
                 }
+                
             }
 
             foreach (MusicaBlock mb in panel1.Controls.OfType<MusicaBlock>())
@@ -183,34 +224,7 @@ namespace Musica_Pro
             }
         }
 
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            if (Convert.ToInt32(toolStripTextBox2.Text) != ti)//tempo
-            {
-                timer1.Interval = Convert.ToInt32(toolStripTextBox2.Text);
-                ti = timer1.Interval;
-            }
 
-            if (Convert.ToInt32(toolStripTextBox1.Text) != ni)//notes
-            {
-                int mbCount = 0;
-                foreach (Control mb in panel1.Controls.OfType<MusicaBlock>())
-                {
-                    mbCount += 1;
-                }
-
-                if (Convert.ToInt32(toolStripTextBox1.Text) > mbCount)
-                {
-                    loadNotes(Convert.ToInt32(toolStripTextBox1.Text) - mbCount);                   
-                }
-                else
-                if (Convert.ToInt32(toolStripTextBox1.Text) < mbCount)
-                {
-                    removeNotes(Convert.ToInt32(toolStripTextBox1.Text));      
-                }
-                ni = Convert.ToInt32(toolStripTextBox1.Text);
-            }            
-        }
     }
 }
 
