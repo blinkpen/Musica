@@ -17,7 +17,7 @@ namespace Musica_Pro
         private int ti = 0;
         private int ni = 0;
         private bool loop = false;
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -68,28 +68,28 @@ namespace Musica_Pro
 
             foreach (MusicaBlock mb in panel1.Controls.OfType<MusicaBlock>())
             {
-                mb.source = openFileDialog1.FileName;                
+                mb.source = openFileDialog1.FileName; //load sound file for each musica block                
             }
         }
 
         private void removeNotes(int whenStop)
         {
-            for (int i = notes; i > whenStop; i--)
+            for (int i = notes; i > whenStop; i--) //remove last musica block until new note amount remains
             {
-                panel1.Controls.Remove(panel1.Controls["Musica Block " + (i)]);
-                notes -= 1;
-                newLineInc -= 1;
+                panel1.Controls.Remove(panel1.Controls["Musica Block " + (i)]); //remove last musica block
+                notes -= 1; //update note count
+                newLineInc -= 1; //update newline incrementer
 
-                if (notes != 0)
+                if (notes != 0) //if note count is not zero
                 {
-                    if (newLineInc == 0)
+                    if (newLineInc == 0) //if newline incrementer is zero
                     {
-                        newLineInc = 10;
+                        newLineInc = rowCount; //set incrementer to 10 to establish newline
                     }
                 }     
-                else
+                else //if note count is zero
                 {
-                    newLineInc = 0;
+                    newLineInc = 0; // set newline incrementer to zero
                 }
             }
         }
@@ -132,33 +132,32 @@ namespace Musica_Pro
 
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
-            reCenterForms();
+            reCenterForms(); //keep panel centered at all times
         }
 
         private void reCenterForms()
         {
-            panel1.Left = (this.ClientSize.Width - panel1.Width) / 2;
+            panel1.Left = (this.ClientSize.Width - panel1.Width) / 2; //center panel1 in form
         }
 
         private void generateMelody()
         {                        
-            Random rnd = new Random();
-            foreach (MusicaBlock mB in panel1.Controls)
+            Random rnd = new Random(); //declare new random
+            foreach (MusicaBlock mB in panel1.Controls) //for every musica block
             {
                 if(!(mB.chbx.Checked)) //if block is not protected then generate note, otherwise do not
                 {
-                    var test = rnd.Next(0, 53);
+                    var test = rnd.Next(0, 53); //deciding variable
 
-                    if(test == 0)//if rest
-                    {
-                        mB.note = test;//set note to rest
-                        mB.cb.SelectedIndex = mB.note;                   
+                    if(test == 0) //if rest
+                    {                        
+                        mB.cb.SelectedIndex = 0; //set note to rest                                          
                     }
                     else//if not rest
                     {
                         if(toolStripComboBox1.SelectedIndex == 0)
                         {
-                            mB.note = rnd.Next(0, 53);//select from all notes
+                            mB.note = rnd.Next(1, 53);//select from all notes
                         }
                         else if(toolStripComboBox1.SelectedIndex == 1)
                         {
