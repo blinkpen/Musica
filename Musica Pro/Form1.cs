@@ -22,7 +22,7 @@ namespace Musica_Pro
         {
             InitializeComponent();
             toolStripComboBox1.SelectedIndex = 0;
-            ti = timer1.Interval;                       
+            ti = timer1.Interval;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -106,7 +106,7 @@ namespace Musica_Pro
                     mB.lbl.Text = mB.Name;
                     panel1.Controls.Add(mB);                    
                     notes += 1;
-                    newLineInc += 1;
+                    newLineInc += 1;                   
                 }
                 else
                 {

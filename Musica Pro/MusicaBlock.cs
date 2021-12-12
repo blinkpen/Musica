@@ -51,22 +51,29 @@ namespace Musica_Pro
                     pitch = new SmbPitchShiftingSampleProvider(reader.ToSampleProvider());
 
                     using (device = new WaveOutEvent())
-                    {
-                        for (int i = comboBox1.SelectedIndex - 1; i > 0; i--)
+                    {                        
+                        if(comboBox1.SelectedIndex >= 1 && comboBox1.SelectedIndex <= 26)
                         {
-                            pitch.PitchFactor = (float)downOneTone;
-                            changer += 1;
-                            semitone = Math.Pow(changer, 1.0 / 12);
-                            upOneTone = semitone * semitone;
-                            downOneTone = 1.0 / upOneTone;
+                            for (int i = comboBox1.Items.Count; i > comboBox1.SelectedIndex - 1; i--)
+                            {
+                                pitch.PitchFactor = (float)downOneTone;
+                                changer += 1;
+                                semitone = Math.Pow(changer, 1.0 / 12);
+                                upOneTone = semitone * semitone;
+                                downOneTone = 1.0 / upOneTone;
+                            }
                         }
-                        //for (int i = 0; i < comboBox1.SelectedIndex - 1; i++)
-                        //{
-                        //    pitch.PitchFactor = (float)upOneTone;
-                        //    changer += 1;
-                        //    semitone = Math.Pow(changer, 1.0 / 12);
-                        //    upOneTone = semitone * semitone;
-                        //}
+                        else if(comboBox1.SelectedIndex >= 27 && comboBox1.SelectedIndex <= 53)
+                        {
+                            for (int i = 0; i < comboBox1.SelectedIndex - 1; i++)
+                            {
+                                pitch.PitchFactor = (float)upOneTone;
+                                changer += 1;
+                                semitone = Math.Pow(changer, 1.0 / 12);
+                                upOneTone = semitone * semitone;                                
+                            }
+                        }
+                        
                     }
                 }
 
