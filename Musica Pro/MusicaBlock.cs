@@ -39,7 +39,7 @@ namespace Musica_Pro
             if (comboBox1.SelectedIndex != 0)
             {
                 isRest = false;                
-                float changer = 2;
+                float changer = 0;
                 var semitone = Math.Pow(changer, 1.0 / 12);
                 var upOneTone = semitone * semitone;
                 var downOneTone = 1.0 / upOneTone;
@@ -68,7 +68,8 @@ namespace Musica_Pro
                                 pitch.PitchFactor = (float)upOneTone;
                                 changer += 1;
                                 semitone = Math.Pow(changer, 1.0 / 12);
-                                upOneTone = semitone * semitone;                                
+                                upOneTone = semitone * semitone;
+                                downOneTone = 1.0 / upOneTone;
                             }
                         }                        
                     }
