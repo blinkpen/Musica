@@ -60,6 +60,7 @@ namespace Musica_Pro
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
@@ -92,7 +93,7 @@ namespace Musica_Pro
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(111, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(125, 22);
             this.toolStripButton1.Text = "Import Sound..";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -233,6 +234,7 @@ namespace Musica_Pro
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 812);
@@ -249,14 +251,15 @@ namespace Musica_Pro
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1577, 834);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
+            this.Cursor = System.Windows.Forms.Cursors.Cross;
             this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Musica";

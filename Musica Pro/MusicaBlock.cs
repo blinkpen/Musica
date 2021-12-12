@@ -40,7 +40,7 @@ namespace Musica_Pro
             {
                 isRest = false;
                 
-                int changer = 2;
+                float changer = 2;
                 var semitone = Math.Pow(changer, 1.0 / 12);
                 var upOneTone = semitone * semitone;
                 var downOneTone = 1.0 / upOneTone;

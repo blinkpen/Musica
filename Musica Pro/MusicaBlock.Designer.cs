@@ -41,7 +41,7 @@ namespace Musica_Pro
             // 
             this.button1.Image = global::Musica_Pro.Properties.Resources.Note24;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(5, 30);
+            this.button1.Location = new System.Drawing.Point(10, 32);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 100);
             this.button1.TabIndex = 0;
@@ -108,7 +108,7 @@ namespace Musica_Pro
             "D#",
             "E",
             "E#"});
-            this.comboBox1.Location = new System.Drawing.Point(5, 133);
+            this.comboBox1.Location = new System.Drawing.Point(10, 135);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 22);
             this.comboBox1.TabIndex = 1;
@@ -116,9 +116,9 @@ namespace Musica_Pro
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(5, 2);
+            this.label1.Location = new System.Drawing.Point(2, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.Size = new System.Drawing.Size(117, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Musica Block";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -131,7 +131,7 @@ namespace Musica_Pro
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(5, 161);
+            this.checkBox1.Location = new System.Drawing.Point(20, 163);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(81, 18);
             this.checkBox1.TabIndex = 3;
@@ -149,7 +149,7 @@ namespace Musica_Pro
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Name = "MusicaBlock";
-            this.Size = new System.Drawing.Size(111, 185);
+            this.Size = new System.Drawing.Size(121, 185);
             this.Load += new System.EventHandler(this.MusicaBlock_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
