@@ -38,13 +38,11 @@ namespace Musica_Pro
             button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             if (comboBox1.SelectedIndex != 0)
             {
-                isRest = false;
-                
+                isRest = false;                
                 float changer = 2;
                 var semitone = Math.Pow(changer, 1.0 / 12);
                 var upOneTone = semitone * semitone;
                 var downOneTone = 1.0 / upOneTone;
-
 
                 using (var reader = new MediaFoundationReader(source))
                 {
@@ -72,8 +70,7 @@ namespace Musica_Pro
                                 semitone = Math.Pow(changer, 1.0 / 12);
                                 upOneTone = semitone * semitone;                                
                             }
-                        }
-                        
+                        }                        
                     }
                 }
 
