@@ -147,7 +147,7 @@ namespace Musica_Pro
             {
                 if(!(mB.chbx.Checked)) //if block is not protected then generate note, otherwise do not
                 {
-                    var test = rnd.Next(0, 53); //deciding variable
+                    var test = rnd.Next(0, 89); //deciding variable
 
                     if(test == 0) //if rest
                     {                        
@@ -157,39 +157,39 @@ namespace Musica_Pro
                     {
                         if(toolStripComboBox1.SelectedIndex == 0)
                         {
-                            mB.note = rnd.Next(1, 53);//select from all notes
+                            mB.note = rnd.Next(1, 89);//select from all notes
                         }
                         else if(toolStripComboBox1.SelectedIndex == 1)
                         {
-                            mB.note = rnd.Next(1, 8);//select from Scale 1
+                            mB.note = rnd.Next(1, 13);//select from Scale 1
                         }
                         else if (toolStripComboBox1.SelectedIndex == 2)
                         {
-                            mB.note = rnd.Next(8, 15);//select from Scale 2
+                            mB.note = rnd.Next(13, 25);//select from Scale 2
                         }
                         else if (toolStripComboBox1.SelectedIndex == 3)
                         {
-                            mB.note = rnd.Next(15, 22);//select from Scale 3
+                            mB.note = rnd.Next(25, 37);//select from Scale 3
                         }
                         else if (toolStripComboBox1.SelectedIndex == 4)
                         {
-                            mB.note = rnd.Next(22, 29);//select from Scale 4
+                            mB.note = rnd.Next(37, 49);//select from Scale 4
                         }
                         else if (toolStripComboBox1.SelectedIndex == 5)
                         {
-                            mB.note = rnd.Next(29, 36);//select from Scale 5
+                            mB.note = rnd.Next(49, 61);//select from Scale 5
                         }
                         else if (toolStripComboBox1.SelectedIndex == 6)
                         {
-                            mB.note = rnd.Next(36, 43);//select from Scale 6
+                            mB.note = rnd.Next(61, 73);//select from Scale 6
                         }
                         else if (toolStripComboBox1.SelectedIndex == 7)
                         {
-                            mB.note = rnd.Next(43, 50);//select from Scale 7
+                            mB.note = rnd.Next(73, 85);//select from Scale 7
                         }
                         else if (toolStripComboBox1.SelectedIndex == 8)
                         {
-                            mB.note = rnd.Next(50, 53);//select from Scale 8
+                            mB.note = rnd.Next(85, 89);//select from Scale 8
                         }
                         mB.cb.SelectedIndex = mB.note;
                     }            

@@ -40,7 +40,7 @@ namespace Musica_Pro
             if (comboBox1.SelectedIndex != 0) //if currently selected note is NOT rest
             {
                 isRest = false; //set boolean to reflect this               
-                float changer = 2; //variable i can use to dynamically adjust the equation based on which note is selected
+                float changer = .25f; //variable i can use to dynamically adjust the equation based on which note is selected
                 var semitone = Math.Pow(changer, 1.0 / 12); //semitone
                 var upOneTone = semitone * semitone; //go up one tone in pitch
                 var downOneTone = 1.0 / upOneTone; //go down one tone in pitch
@@ -51,23 +51,23 @@ namespace Musica_Pro
 
                     using (device = new WaveOutEvent())
                     {                        
-                        if(comboBox1.SelectedIndex >= 1 && comboBox1.SelectedIndex <= 26)
+                        if(comboBox1.SelectedIndex >= 1 && comboBox1.SelectedIndex <= 44)
                         {
-                            for (int i = comboBox1.Items.Count; i > comboBox1.SelectedIndex - 1; i--)
+                            for (int i = comboBox1.Items.Count - 1; i > comboBox1.SelectedIndex - 1; i--)
                             {
                                 pitch.PitchFactor = (float)downOneTone;
-                                changer += 1;
+                                changer += .25f;
                                 semitone = Math.Pow(changer, 1.0 / 12);
                                 upOneTone = semitone * semitone;
                                 downOneTone = 1.0 / upOneTone;
                             }
                         }
-                        else if(comboBox1.SelectedIndex >= 27 && comboBox1.SelectedIndex <= 53)
+                        else if(comboBox1.SelectedIndex >= 45 && comboBox1.SelectedIndex <= 88)
                         {
                             for (int i = 0; i < comboBox1.SelectedIndex - 1; i++)
                             {
                                 pitch.PitchFactor = (float)upOneTone;
-                                changer += 1;
+                                changer += .25f;
                                 semitone = Math.Pow(changer, 1.0 / 12);
                                 upOneTone = semitone * semitone;
                                 downOneTone = 1.0 / upOneTone;
@@ -108,35 +108,35 @@ namespace Musica_Pro
             {
                 mB.BackColor = Color.White;
             }
-            else if (mB.note >= 1 && mB.note <= 7)
+            else if (mB.note >= 1 && mB.note <= 12)
             {
                 mB.BackColor = Color.Red;
             }
-            else if (mB.note >= 8 && mB.note <= 14)
+            else if (mB.note >= 13 && mB.note <= 24)
             {
                 mB.BackColor = Color.OrangeRed;
             }
-            else if (mB.note >= 15 && mB.note <= 21)
+            else if (mB.note >= 25 && mB.note <= 36)
             {
                 mB.BackColor = Color.Orange;
             }
-            else if (mB.note >= 22 && mB.note <= 28)
+            else if (mB.note >= 37 && mB.note <= 48)
             {
                 mB.BackColor = Color.Yellow;
             }
-            else if (mB.note >= 29 && mB.note <= 35)
+            else if (mB.note >= 49 && mB.note <= 60)
             {
                 mB.BackColor = Color.Green;
             }
-            else if (mB.note >= 36 && mB.note <= 42)
+            else if (mB.note >= 61 && mB.note <= 72)
             {
                 mB.BackColor = Color.Blue;
             }
-            else if (mB.note >= 43 && mB.note <= 49)
+            else if (mB.note >= 73 && mB.note <= 84)
             {
                 mB.BackColor = Color.Purple;
             }
-            else if (mB.note >= 50 && mB.note <= 54)
+            else if (mB.note >= 85 && mB.note <= 88)
             {
                 mB.BackColor = Color.DeepPink;
             }
