@@ -34,15 +34,16 @@ namespace Musica_Pro
 
         public void playMe()
         {
-            button1.Image = Properties.Resources.Note24pink;
-            button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            if (comboBox1.SelectedIndex != 0)
+            button1.Image = Properties.Resources.Note24pink; //set button image to played block image
+            button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter; //bring button image down
+
+            if (comboBox1.SelectedIndex != 0) //if currently selected note is NOT rest
             {
-                isRest = false;                
-                float changer = 0;
-                var semitone = Math.Pow(changer, 1.0 / 12);
-                var upOneTone = semitone * semitone;
-                var downOneTone = 1.0 / upOneTone;
+                isRest = false; //set boolean to reflect this               
+                float changer = 2; //variable i can use to dynamically adjust the equation based on which note is selected
+                var semitone = Math.Pow(changer, 1.0 / 12); //semitone
+                var upOneTone = semitone * semitone; //go up one tone in pitch
+                var downOneTone = 1.0 / upOneTone; //go down one tone in pitch
 
                 using (var reader = new MediaFoundationReader(source))
                 {
@@ -85,23 +86,24 @@ namespace Musica_Pro
                 isRest = true;
             }
   
-           timer1.Start();
+           timer1.Start(); //start timer
         }  
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            playMe();
+            playMe(); //play this note
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {             
-            note = comboBox1.SelectedIndex;
-            colorize(this);
-            button1.Text = comboBox1.SelectedItem.ToString();        
+            note = comboBox1.SelectedIndex; //set note variable to whichever note is selected in combobox
+            colorize(this); //colorize musica block based on combobox's current value
+            button1.Text = comboBox1.SelectedItem.ToString(); //set button text to match combobox so it can display the current Note selected like a label     
         }
 
-        private void colorize(MusicaBlock mB) 
+        private void colorize(MusicaBlock mB) //change the color theme of this instance of Musica Block based on which note is selected in the combobox
         {
+            //change backcolor
             if(mB.note == 0)
             {
                 mB.BackColor = Color.White;
@@ -138,36 +140,37 @@ namespace Musica_Pro
             {
                 mB.BackColor = Color.DeepPink;
             }
-            Color lightRed = ControlPaint.Light(mB.BackColor);
-            mB.button1.BackColor = lightRed;
-            mB.cb.BackColor = lightRed;
+            Color lightRed = ControlPaint.Light(mB.BackColor); //based on the new backcolor, create a lighter color of it
+            mB.button1.BackColor = lightRed; //make button this lighter color
+            mB.cb.BackColor = lightRed; //make combobox that color as well
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            t1 += 1;
-            if (t1 >= 10)
+            t1 += 1; //increment t1 each tick
+
+            if (t1 >= 10) //if t1 is equal to 10 or goes past it
             {
-                button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+                button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter; //bring image on button back up
             }
 
-            if (isRest)
+            if (isRest) //if note is rest
             {
-                if (t1 >= 50)
+                if (t1 >= 50) //if t1 is equal to 50 or goes past it
                 {
-                    button1.Image = Properties.Resources.Note24;
-                    timer1.Stop();
-                    t1 = 0;
+                    button1.Image = Properties.Resources.Note24; //change button image back to normal
+                    timer1.Stop(); //stop timer
+                    t1 = 0; //reset t1
                 }
             }
-            else
+            else // if not rest but an actual note
             {
-                if (device.PlaybackState == PlaybackState.Stopped)
+                if (device.PlaybackState == PlaybackState.Stopped) //if device is not currently playing
                 {
-                    button1.Image = Properties.Resources.Note24;
-                    timer1.Stop();
-                    button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-                    t1 = 0;
+                    button1.Image = Properties.Resources.Note24; //set button image back to normal
+                    timer1.Stop(); // stop timer
+                    button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter; // bring image on button back up
+                    t1 = 0; //reset t1
                 }
             }
         }
