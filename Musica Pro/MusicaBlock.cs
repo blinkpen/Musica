@@ -32,6 +32,11 @@ namespace Musica_Pro
             comboBox1.SelectedIndex = note;
         }
 
+        private bool isBetween(int x, int y, int i)
+        {
+            return i >= x && i <= y;
+        }
+
         public void playMe()
         {
             button1.Image = Properties.Resources.Note24pink; //set button image to played block image
@@ -40,39 +45,31 @@ namespace Musica_Pro
             if (comboBox1.SelectedIndex != 0) //if currently selected note is NOT rest
             {
                 isRest = false; //set boolean to reflect this               
-                float changer = .25f; //variable i can use to dynamically adjust the equation based on which note is selected
-                var semitone = Math.Pow(changer, 1.0 / 12); //semitone
+                
+                var semitone = Math.Pow(2, 1.0 / 12); //semitone
                 var upOneTone = semitone * semitone; //go up one tone in pitch
                 var downOneTone = 1.0 / upOneTone; //go down one tone in pitch
 
                 using (var reader = new MediaFoundationReader(source))
                 {
                     pitch = new SmbPitchShiftingSampleProvider(reader.ToSampleProvider());
-
+                    
                     using (device = new WaveOutEvent())
-                    {                        
-                        if(comboBox1.SelectedIndex >= 1 && comboBox1.SelectedIndex <= 44)
+                    {         
+                        if (isBetween(1, 44, comboBox1.SelectedIndex))
                         {
-                            for (int i = comboBox1.Items.Count - 1; i > comboBox1.SelectedIndex - 1; i--)
+                            for (int i = 44; i > comboBox1.SelectedIndex; i--)
                             {
-                                pitch.PitchFactor = (float)downOneTone;
-                                changer += .25f;
-                                semitone = Math.Pow(changer, 1.0 / 12);
-                                upOneTone = semitone * semitone;
-                                downOneTone = 1.0 / upOneTone;
+                                pitch.PitchFactor = (float)((float)downOneTone / (semitone + i));
                             }
                         }
-                        else if(comboBox1.SelectedIndex >= 45 && comboBox1.SelectedIndex <= 88)
+                        else if (isBetween(45, 88, comboBox1.SelectedIndex))
                         {
-                            for (int i = 0; i < comboBox1.SelectedIndex - 1; i++)
+                            for (int i = 44; i < comboBox1.SelectedIndex; i++)
                             {
-                                pitch.PitchFactor = (float)upOneTone;
-                                changer += .25f;
-                                semitone = Math.Pow(changer, 1.0 / 12);
-                                upOneTone = semitone * semitone;
-                                downOneTone = 1.0 / upOneTone;
+                                pitch.PitchFactor = (float)((float)upOneTone * (semitone + i));
                             }
-                        }                        
+                        }
                     }
                 }
 
