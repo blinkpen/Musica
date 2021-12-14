@@ -91,7 +91,7 @@ namespace Musica_Pro
                 isRest = true;
             }
 
-           timer1.Start(); //start timer
+            timer1.Start(); //start timer
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace Musica_Pro
             }
             else if (mB.note >= 1 && mB.note <= 12)
             {
-                rgb = Color.Red;
+                rgb = Color.FromArgb(255, 0, 0);//red
             }
             else if (mB.note >= 13 && mB.note <= 24)
             {
@@ -128,19 +128,19 @@ namespace Musica_Pro
             }
             else if (mB.note >= 37 && mB.note <= 48)
             {
-                rgb = Color.Yellow;
+                rgb = Color.FromArgb(255, 255, 0);//yellow
             }
             else if (mB.note >= 49 && mB.note <= 60)
             {
-                rgb = Color.Green;
+                rgb = Color.FromArgb(0, 255, 0);//green
             }
             else if (mB.note >= 61 && mB.note <= 72)
             {
-                rgb = Color.Blue;
+                rgb = Color.FromArgb(0, 255, 255);//blue
             }
             else if (mB.note >= 73 && mB.note <= 84)
             {
-                rgb = Color.Purple;
+                rgb = Color.FromArgb(255, 0, 255);//magenta
             }
             else if (mB.note >= 85 && mB.note <= 88)
             {
