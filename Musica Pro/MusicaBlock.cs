@@ -81,7 +81,7 @@ namespace Musica_Pro
                     }
                 }
 
-                                //device.Init(pitch.Take(TimeSpan.FromSeconds(2)));
+                //device.Init(pitch.Take(TimeSpan.FromSeconds(2)));
                 device.Init(pitch);
                 device.Play();
                 button1.Image = Properties.Resources.Note24pink;
@@ -108,46 +108,49 @@ namespace Musica_Pro
 
         private void colorize(MusicaBlock mB) //change the color theme of this instance of Musica Block based on which note is selected in the combobox
         {
-            //change backcolor
+            Color rgb = SystemColors.Control;
+            
             if(mB.note == 0)
             {
-                mB.BackColor = Color.White;
+                rgb = Color.White;
             }
             else if (mB.note >= 1 && mB.note <= 12)
             {
-                mB.BackColor = Color.Red;
+                rgb = Color.Red;
             }
             else if (mB.note >= 13 && mB.note <= 24)
             {
-                mB.BackColor = Color.OrangeRed;
+                rgb = Color.OrangeRed;
             }
             else if (mB.note >= 25 && mB.note <= 36)
             {
-                mB.BackColor = Color.Orange;
+                rgb = Color.Orange;
             }
             else if (mB.note >= 37 && mB.note <= 48)
             {
-                mB.BackColor = Color.Yellow;
+                rgb = Color.Yellow;
             }
             else if (mB.note >= 49 && mB.note <= 60)
             {
-                mB.BackColor = Color.Green;
+                rgb = Color.Green;
             }
             else if (mB.note >= 61 && mB.note <= 72)
             {
-                mB.BackColor = Color.Blue;
+                rgb = Color.Blue;
             }
             else if (mB.note >= 73 && mB.note <= 84)
             {
-                mB.BackColor = Color.Purple;
+                rgb = Color.Purple;
             }
             else if (mB.note >= 85 && mB.note <= 88)
             {
-                mB.BackColor = Color.DeepPink;
+                rgb = Color.DeepPink;
             }
-            Color lightRed = ControlPaint.Light(mB.BackColor); //based on the new backcolor, create a lighter color of it
-            mB.button1.BackColor = lightRed; //make button this lighter color
-            mB.cb.BackColor = lightRed; //make combobox that color as well
+            mB.ForeColor = rgb;
+            Color lightRGB = ControlPaint.Light(rgb); //based on the new backcolor, create a lighter color of it
+            mB.button1.BackColor = rgb;
+            mB.button1.ForeColor = Color.Black;
+            mB.cb.BackColor = lightRGB; //make combobox that color as well
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
