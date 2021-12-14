@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
 using System.Drawing;
+using System.ComponentModel;
 
 namespace Musica_Pro
 {
