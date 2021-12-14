@@ -55,20 +55,29 @@ namespace Musica_Pro
                     pitch = new SmbPitchShiftingSampleProvider(reader.ToSampleProvider());
                     
                     using (device = new WaveOutEvent())
-                    {         
+                    {
+                        
                         if (isBetween(1, 44, comboBox1.SelectedIndex))
                         {
+                            float n = (float)semitone;
                             for (int i = 44; i > comboBox1.SelectedIndex; i--)
-                            {
-                                pitch.PitchFactor = (float)((float)downOneTone / (semitone + i));
+                            {                                
+                                n = (float)downOneTone * n;
                             }
+                            pitch.PitchFactor = n;
                         }
                         else if (isBetween(45, 88, comboBox1.SelectedIndex))
                         {
+                            float n = (float)semitone;
                             for (int i = 44; i < comboBox1.SelectedIndex; i++)
                             {
-                                pitch.PitchFactor = (float)((float)upOneTone * (semitone + i));
+                                 n = (float)upOneTone * n;                            
                             }
+                            pitch.PitchFactor = n;
+                        }
+                        else
+                        {
+                            MessageBox.Show(this.Name);
                         }
                     }
                 }
