@@ -56,12 +56,11 @@ namespace Musica_Pro
                     
                     using (device = new WaveOutEvent())
                     {
-                        
                         if (isBetween(1, 44, comboBox1.SelectedIndex))
                         {
                             float n = (float)semitone;
                             for (int i = 44; i > comboBox1.SelectedIndex; i--)
-                            {                                
+                            {
                                 n = (float)downOneTone * n;
                             }
                             pitch.PitchFactor = n;
@@ -71,7 +70,7 @@ namespace Musica_Pro
                             float n = (float)semitone;
                             for (int i = 44; i < comboBox1.SelectedIndex; i++)
                             {
-                                 n = (float)upOneTone * n;                            
+                                 n = (float)upOneTone * n;
                             }
                             pitch.PitchFactor = n;
                         }
