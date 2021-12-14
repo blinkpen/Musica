@@ -83,16 +83,16 @@ namespace Musica_Pro
 
                                 //device.Init(pitch.Take(TimeSpan.FromSeconds(2)));
                 device.Init(pitch);
-                device.Play();                  
-                button1.Image = Properties.Resources.Note24pink;                
+                device.Play();
+                button1.Image = Properties.Resources.Note24pink;
             }
             else
             {
                 isRest = true;
             }
-  
+
            timer1.Start(); //start timer
-        }  
+        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -100,10 +100,10 @@ namespace Musica_Pro
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {             
+        {
             note = comboBox1.SelectedIndex; //set note variable to whichever note is selected in combobox
             colorize(this); //colorize musica block based on combobox's current value
-            button1.Text = comboBox1.SelectedItem.ToString(); //set button text to match combobox so it can display the current Note selected like a label     
+            button1.Text = comboBox1.SelectedItem.ToString(); //set button text to match combobox so it can display the current Note selected like a label
         }
 
         private void colorize(MusicaBlock mB) //change the color theme of this instance of Musica Block based on which note is selected in the combobox
