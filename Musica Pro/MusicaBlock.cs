@@ -120,11 +120,11 @@ namespace Musica_Pro
             }
             else if (mB.note >= 13 && mB.note <= 24)
             {
-                rgb = Color.OrangeRed;
+                rgb = Color.FromArgb(253, 68, 0);//redorange
             }
             else if (mB.note >= 25 && mB.note <= 36)
             {
-                rgb = Color.Orange;
+                rgb = Color.FromArgb(248, 128, 7);//orange
             }
             else if (mB.note >= 37 && mB.note <= 48)
             {
