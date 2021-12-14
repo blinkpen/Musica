@@ -249,6 +249,38 @@ namespace Musica_Pro
                 loop = false;
             }
         }
+
+        private void toolStripTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))//textbox can only accept numeric characters and nothing else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void toolStripTextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))//textbox can only accept numeric characters and nothing else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void toolStripTextBox1_Leave(object sender, EventArgs e)
+        {
+            if (toolStripTextBox1.Text == "")
+            {
+                toolStripTextBox1.Text = "10";
+            }
+        }
+
+        private void toolStripTextBox2_Leave(object sender, EventArgs e)
+        {
+            if (toolStripTextBox2.Text == "0" || toolStripTextBox2.Text == "")
+            {
+                toolStripTextBox2.Text = "300";
+            }
+        }
     }
 }
 

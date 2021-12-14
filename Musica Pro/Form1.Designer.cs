@@ -105,7 +105,7 @@ namespace Musica_Pro
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(39, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(42, 22);
             this.toolStripLabel1.Text = "Notes";
             // 
             // toolStripTextBox1
@@ -113,7 +113,9 @@ namespace Musica_Pro
             this.toolStripTextBox1.Margin = new System.Windows.Forms.Padding(1, 0, 5, 0);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 25);
-            this.toolStripTextBox1.Text = "5";
+            this.toolStripTextBox1.Text = "10";
+            this.toolStripTextBox1.Leave += new System.EventHandler(this.toolStripTextBox1_Leave);
+            this.toolStripTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripTextBox1_KeyPress);
             // 
             // toolStripSeparator1
             // 
@@ -123,7 +125,7 @@ namespace Musica_Pro
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(46, 22);
+            this.toolStripLabel2.Size = new System.Drawing.Size(42, 22);
             this.toolStripLabel2.Text = "Tempo";
             // 
             // toolStripTextBox2
@@ -131,7 +133,9 @@ namespace Musica_Pro
             this.toolStripTextBox2.Margin = new System.Windows.Forms.Padding(1, 0, 5, 0);
             this.toolStripTextBox2.Name = "toolStripTextBox2";
             this.toolStripTextBox2.Size = new System.Drawing.Size(50, 25);
-            this.toolStripTextBox2.Text = "500";
+            this.toolStripTextBox2.Text = "300";
+            this.toolStripTextBox2.Leave += new System.EventHandler(this.toolStripTextBox2_Leave);
+            this.toolStripTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripTextBox2_KeyPress);
             // 
             // toolStripSeparator5
             // 
@@ -143,7 +147,7 @@ namespace Musica_Pro
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(68, 22);
+            this.toolStripButton4.Size = new System.Drawing.Size(76, 22);
             this.toolStripButton4.Text = "Refresh";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
@@ -157,7 +161,7 @@ namespace Musica_Pro
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(120, 22);
+            this.toolStripButton2.Size = new System.Drawing.Size(132, 22);
             this.toolStripButton2.Text = "Generate Melody";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -188,7 +192,7 @@ namespace Musica_Pro
             this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(54, 22);
+            this.toolStripButton5.Size = new System.Drawing.Size(55, 22);
             this.toolStripButton5.Text = "Loop";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
@@ -229,7 +233,7 @@ namespace Musica_Pro
             // 
             // timer1
             // 
-            this.timer1.Interval = 500;
+            this.timer1.Interval = 300;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // statusStrip1
@@ -246,7 +250,7 @@ namespace Musica_Pro
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(138, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(161, 17);
             this.toolStripStatusLabel1.Text = "Current Sound: Nothing";
             // 
             // Form1
