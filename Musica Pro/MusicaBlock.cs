@@ -40,6 +40,12 @@ namespace Musica_Pro
 
         public void playMe()
         {
+            if(timer1.Enabled)
+            { 
+                timer1.Stop();
+                button1.ImageAlign = ContentAlignment.TopCenter;
+                button1.Image = Properties.Resources.Note24;
+            }
             button1.Image = Properties.Resources.Note24pink; //set button image to played block image
             button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter; //bring button image down
 
