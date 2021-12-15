@@ -63,10 +63,10 @@ namespace Musica_Pro
                     
                     using (device = new WaveOutEvent())
                     {
-                        if (isBetween(1, 44, comboBox1.SelectedIndex))
+                        if (isBetween(1, 43, comboBox1.SelectedIndex))
                         {
                             float n = (float)semitone;
-                            for (int i = 44; i > comboBox1.SelectedIndex; i--)
+                            for (int i = 43; i > comboBox1.SelectedIndex; i--)
                             {
                                 n = (float)downOneTone * n;
                             }
@@ -75,7 +75,7 @@ namespace Musica_Pro
                         else if (isBetween(45, 88, comboBox1.SelectedIndex))
                         {
                             float n = (float)semitone;
-                            for (int i = 44; i < comboBox1.SelectedIndex; i++)
+                            for (int i = 45; i < comboBox1.SelectedIndex; i++)
                             {
                                  n = (float)upOneTone * n;
                             }
@@ -83,7 +83,7 @@ namespace Musica_Pro
                         }
                         else
                         {
-                            MessageBox.Show(this.Name);
+                            //no pitch shift here (middle note)
                         }
                     }
                 }
