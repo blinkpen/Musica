@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Code written by Kevin Gragg (blinkpen) of iLL-Logic Studios 2022
+using System;
 using System.Threading;
 using System.Windows.Forms;
 using NAudio.Wave;
