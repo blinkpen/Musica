@@ -22,4 +22,5 @@ F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.csproj.Copy
 F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.dll
 F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.pdb
 F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.genruntimeconfig.cache
-F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.csprojAssemblyReference.cache
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.csproj.AssemblyReference.cache
+F:\Projects\Musica Pro\Musica Pro\obj\Debug\netcoreapp3.1\Musica Pro.GeneratedMSBuildEditorConfig.editorconfig
