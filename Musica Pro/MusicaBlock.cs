@@ -76,7 +76,7 @@ namespace Musica_Pro
                         else if (isBetween(45, 88, comboBox1.SelectedIndex))
                         {
                             float n = (float)semitone;
-                            for (int i = 45; i < comboBox1.SelectedIndex; i++)
+                            for (int i = 44; i < comboBox1.SelectedIndex; i++)
                             {
                                  n = (float)upOneTone * n;
                             }
